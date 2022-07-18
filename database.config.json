@@ -1,0 +1,13 @@
+{
+    "database": "postit",
+    "username": "admin",
+    "password": "3834",
+    "host": "localhost",
+    "pool": {
+        "max": 5,
+        "min": 0,
+        "acquire": 30000,
+        "idle": 10000
+    },
+    "dialect": "mariadb"
+}

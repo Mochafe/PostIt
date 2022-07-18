@@ -1,0 +1,1 @@
+document.getElementById("titre").innerHTML = "Truc bidule";
