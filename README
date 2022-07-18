@@ -1,2 +1,5 @@
 # PostIt
-start server ```npm serve```
+start server
+```
+npm serve
+```
