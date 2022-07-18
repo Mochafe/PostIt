@@ -56,7 +56,7 @@ class PostModel {
      * 
      * @returns Return all posts
      */
-    async getAllPost() {
+    async getAllPosts() {
         return this.post.findAll();
     }
 
