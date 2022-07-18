@@ -1,1 +1,7 @@
-document.getElementById("titre").innerHTML = "Truc bidule";
+const app = Vue.createApp({
+    data(){
+        return {
+            
+        }
+    }
+}).mount("#app");
