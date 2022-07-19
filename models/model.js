@@ -8,7 +8,6 @@ class Model {
             dialect: dbConfig.dialect,
             pool: dbConfig.pool
         });
-
     }
 
     async authenticate() {
