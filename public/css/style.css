@@ -100,7 +100,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 400px;
+    max-width: 450px;
     width: 80%;
     height: auto;
 
@@ -166,4 +166,16 @@ header {
     text-align: end;
 
     margin: 5px 5px;
+}
+
+@media screen and (min-width: 992px) {
+   .title-header {
+    font-size: 10vw;
+
+    height: auto;
+    width: calc(100% - 100px);
+   } 
+   .post {
+    max-width: 700px;
+   }
 }

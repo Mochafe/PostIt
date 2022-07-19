@@ -9,7 +9,6 @@ class Model {
             pool: dbConfig.pool
         });
 
-        this.patate = 1;
     }
 
     async authenticate() {
