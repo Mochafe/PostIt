@@ -11,7 +11,7 @@ const app = Vue.createApp({
                 this.posts = response.data;
             });
 
-        }
+        },
     },
     beforeMount() {
         this.getPosts()

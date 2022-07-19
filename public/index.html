@@ -12,19 +12,20 @@
 <body>
     <div id="app">
         <header>
-            <div class="title-header">Post It</div>
+            <a href="#" class="title-link">
+                <div class="title-header">Post It</div>
+            </a>
         </header>
         <a class="btn-post" href="addPost.html">Post!</a>
 
         <div class="post" v-for="post in posts">
             <h2 class="post-title">[{{ post.title }}]</h2>
             <article class="post-body">
-                {{ post.title }}
+                {{ post.message }}
             </article>
             <h3 class="post-author">{{ post.author }}</h3>
         </div>
     </div>
-    
     
     <script src="../javascript/index.js"></script>
 </body>

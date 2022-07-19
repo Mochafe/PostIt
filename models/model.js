@@ -8,6 +8,8 @@ class Model {
             dialect: dbConfig.dialect,
             pool: dbConfig.pool
         });
+
+        this.patate = 1;
     }
 
     async authenticate() {

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Accueil</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="/" class="title-link">
+                <div class="title-header">Post It</div>
+            </a>
+        </header>
+
+        <div class="post-form">
+            <div class="form-group">
+                <label for="title">Titre</label>
+                <input type="text" id="title" class="post-input" v-model="title" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" class="post-input" cols="30" rows="10" v-model="message"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="author">Auteur</label>
+                <input type="text" id="author" class="post-input" v-model="author" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Envoyer" class="btn-submit" @click="onSubmit">
+            </div>
+        </div>       
+    </div>
+    
+    <script src="../javascript/addPost.js"></script>
+</body>
+</html>
