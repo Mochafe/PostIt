@@ -1,16 +1,16 @@
 const app = Vue.createApp({
     data() {
         return {
-            posts: []
+            posts: [],
+            postUrl: "updatePost.html?id="
         }
     },
     methods: {
         getPosts() {
-            let posts;
-            axios.post("/getAllPosts").then((response) => {
+            axios.get("/getAllPosts").then((response) => {
                 this.posts = response.data;
             });
-
+            
         },
     },
     beforeMount() {

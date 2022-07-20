@@ -18,13 +18,13 @@
         </header>
         <a class="btn-post" href="addPost.html">Post!</a>
 
-        <div class="post" v-for="post in posts">
+        <a :href="postUrl + post.id" class="post" v-for="post in posts">
             <h2 class="post-title">[{{ post.title }}]</h2>
             <article class="post-body">
                 {{ post.message }}
             </article>
             <h3 class="post-author">{{ post.author }}</h3>
-        </div>
+        </a>
     </div>
     
     <script src="../javascript/index.js"></script>

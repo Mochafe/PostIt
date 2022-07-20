@@ -72,6 +72,30 @@ class PostModel {
             }
         })
     }
+
+    /**
+     * 
+     * @param {Number} id of the post to update
+     * @param {{title: String, message: String, author: String}} post new values
+     */
+    async updatePost(post) {
+        return this.post.update({
+            title: post.title,
+            message: post.message,
+            author: post.author
+        },
+        {
+            where: {id: post.id}
+        });
+    }
+
+    async deletePost(id) {
+        return this.post.destroy({
+            where: {
+                id: id
+            }
+        })
+    }
 }
 
 module.exports = {

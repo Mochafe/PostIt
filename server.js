@@ -10,12 +10,13 @@ const postModel = new PostModel(model.sequelize);
 app.use(express.static("public"));
 app.use(express.json());
 
-app.post("/getAllPosts", (req, res) => {
+app.get("/getAllPosts", (req, res) => {
     postModel.getAllPosts().then((response) => {
         let buff = [];
 
         response.forEach(post => {
             buff.push({
+                id: post.dataValues.id,
                 title: post.dataValues.title,
                 message: post.dataValues.message,
                 author: post.dataValues.author
@@ -23,6 +24,45 @@ app.post("/getAllPosts", (req, res) => {
         });
         
         res.send(buff);
+    });
+});
+
+app.get("/getPost", (req, res) => {
+    postModel.getPost(req.query.id).then((response) => {
+        res.send({
+            title: response[0].dataValues.title,
+            message: response[0].dataValues.message,
+            author: response[0].dataValues.author
+        });
+    });
+});
+
+app.post("/updatePost", (req, res) => {
+    if(typeof(req.body.title) == "undefined" || typeof(req.body.message) == "undefined") {
+        res.send(`/changePost.html?id=${req.query.id}`);
+        return;
+    }
+    if(req.body.title == "" || req.body.message == "") {
+        res.send(`/changePost.html?id=${req.query.id}`);
+        return;
+    }
+
+    console.log(req.body);
+
+   try {
+        postModel.updatePost(req.body).then((result) => {
+            console.log(result);
+            res.send("/");
+        });
+        
+    } catch(err) {
+        console.log("/changePost : " + err);
+    }
+});
+
+app.delete("/deletePost", (req, res) => {
+    postModel.deletePost(req.query.id).then(() => {
+        res.send("/");
     });
 });
 
