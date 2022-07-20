@@ -6,7 +6,7 @@ class PostModel {
      * @param {!Sequilize} model 
      */
     constructor(sequelize) {
-        if(typeof(sequelize) === "undefined") throw new Error("sequelize argument in constructor is not defined");
+        if (typeof (sequelize) === "undefined") throw new Error("sequelize argument in constructor is not defined");
 
         this.post = sequelize.define("post", {
             id: {
@@ -44,12 +44,12 @@ class PostModel {
      * @param {?String} author 
      */
     async addPost(title, message, author = null) {
-            if(title == "" || message == "") throw new Error("addPost function: invalid argument");
-            await this.post.create({
-                title: title,
-                message: message,
-                author: author
-            });
+        if (title == "" || message == "") throw new Error("addPost function: invalid argument");
+        await this.post.create({
+            title: title,
+            message: message,
+            author: author
+        });
     }
 
     /**
@@ -84,9 +84,9 @@ class PostModel {
             message: post.message,
             author: post.author
         },
-        {
-            where: {id: post.id}
-        });
+            {
+                where: { id: post.id }
+            });
     }
 
     async deletePost(id) {

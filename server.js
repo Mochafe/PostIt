@@ -61,19 +61,24 @@ app.post("/updatePost", (req, res) => {
 });
 
 app.delete("/deletePost", (req, res) => {
-    postModel.deletePost(req.query.id).then(() => {
-        res.send("/");
-    });
+    try {
+        postModel.deletePost(req.query.id).then(() => {
+            res.send("/");
+        });
+    } catch(err) {
+        console.log("/deletePost" + err);
+    }
+    
 });
 
 app.post("/addPost", (req, res) => {
 
     if(typeof(req.body.title) == "undefined" || typeof(req.body.message) == "undefined") {
-        res.send("/addPost");
+        res.send("/addPost.html");
         return;
     }
     if(req.body.title == "" || req.body.message == "") {
-        res.send("/addPost");
+        res.send("/addPost.html");
         return;
     }
 
@@ -86,6 +91,10 @@ app.post("/addPost", (req, res) => {
         console.log("/addPost : " + err);
     } 
 });
+
+app.get("*", (req, res) => {
+    res.send("Page 404");
+})
 
 app.listen(8080, () => {
     console.log("server started on port : " +  8080);

@@ -3,6 +3,11 @@
     src: url("/fonts/RobotoMono-VariableFont_wght.ttf");
 }
 
+@font-face {
+    font-family: "SquarePeg";
+    src: url("/fonts/SquarePeg-Regular.ttf");
+}
+
 body {
     margin: 0;
     font-family: "Roboto-Mono";
@@ -216,6 +221,9 @@ a {
 
     text-align: center;
     overflow: scroll;
+
+    font-size: 2rem;
+    font-family: SquarePeg;
 }
 .post-author {
     text-align: end;
@@ -241,4 +249,9 @@ a {
         margin-left: auto;
         margin-right: auto;
    }
+
+   .post-body {
+    font-size: 3em;
+}
+
 }
