@@ -25,7 +25,7 @@ const app = Vue.createApp({
         updatePost() {
             if(title == "" || message == "") return;
 
-            axios.post(`/changePost?id=${this.id}`, {
+            axios.post(`/updatePost?id=${this.id}`, {
                 id: this.id,
                 title: this.title,
                 message: this.message,
