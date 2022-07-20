@@ -1,4 +1,4 @@
 # PostIt
-start server ```npm serve```
+start server ```npm run serve```
 
 you need to have a database already created and to set up the database.config.json file
