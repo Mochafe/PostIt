@@ -29,6 +29,7 @@ app.get("/getAllPosts", (req, res) => {
 
 app.get("/getPost", (req, res) => {
     postModel.getPost(req.query.id).then((response) => {
+        console.log(response);
         res.send({
             title: response[0].dataValues.title,
             message: response[0].dataValues.message,
