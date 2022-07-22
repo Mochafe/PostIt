@@ -224,6 +224,13 @@ a {
 
     font-size: 2rem;
     font-family: SquarePeg;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.post-body::-webkit-scrollbar {
+   display: none;
 }
 .post-author {
     text-align: end;
