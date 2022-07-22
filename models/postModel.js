@@ -71,7 +71,9 @@ class PostModel {
                 id: id
             }
         });
-
+        
+        console.log(result);
+        
         if(typeof(result[0].dataValues.title) == "undefined" || typeof(result[0].dataValues.message) == "undefined") throw new Error( id + " doesn't exist in database");
     }
 
