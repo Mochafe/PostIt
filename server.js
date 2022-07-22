@@ -29,7 +29,7 @@ app.get("/getAllPosts", (req, res) => {
 
 app.get("/getPost", (req, res) => {
     postModel.getPost(req.query.id).then((response) => {
-        console.log(response);
+        if(typeof(response) == "undefined") res.send("Whala trick pa avek lé id la");
         res.send({
             title: response[0].dataValues.title,
             message: response[0].dataValues.message,
