@@ -29,7 +29,7 @@ app.get("/getAllPosts", (req, res) => {
 
 app.get("/getPost", (req, res) => {
     postModel.getPost(req.query.id).then((response) => {
-        if(response) == []) res.send("Whala trick pa avek lé id la");
+        if(response == []) res.send("Whala trick pa avek lé id la");
         res.send({
             title: response[0].dataValues.title,
             message: response[0].dataValues.message,
