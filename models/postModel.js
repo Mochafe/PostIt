@@ -76,7 +76,7 @@ class PostModel {
         
         
         
-        if(typeof(result[0].dataValues.title) == "undefined" || typeof(result[0].dataValues.message) == "undefined") throw new Error( id + " doesn't exist in database");
+        //if(typeof(result[0].dataValues.title) == "undefined" || typeof(result[0].dataValues.message) == "undefined") throw new Error( id + " doesn't exist in database");
     }
 
     /**
