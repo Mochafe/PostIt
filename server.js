@@ -36,6 +36,7 @@ app.get("/getPost", (req, res) => {
             author: response[0].dataValues.author
         }).catch((err) => {
             console.log("/getPost: " + err);
+            res.send("bad id");
         });
     });
 });

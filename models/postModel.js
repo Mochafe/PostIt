@@ -66,11 +66,13 @@ class PostModel {
      * @returns Return an post
      */
     async getPost(id) {
-        return this.post.findAll({
+        let result = this.post.findAll({
             where: {
                 id: id
             }
-        })
+        });
+
+        if(typeof(result[0].dataValues.title) == "undefined" || typeof(result[0].dataValues.message) == "undefined") throw new Error( id + " doesn't exist in database");
     }
 
     /**
