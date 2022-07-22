@@ -70,9 +70,11 @@ class PostModel {
             where: {
                 id: id
             }
+        }).then((res) => {
+            console.log(res);
         });
         
-        console.log(result);
+        
         
         if(typeof(result[0].dataValues.title) == "undefined" || typeof(result[0].dataValues.message) == "undefined") throw new Error( id + " doesn't exist in database");
     }
