@@ -33,6 +33,8 @@ app.get("/getPost", (req, res) => {
             title: response[0].dataValues.title,
             message: response[0].dataValues.message,
             author: response[0].dataValues.author
+        }).catch((err) => {
+            console.log("/getPost: " + err);
         });
     });
 });
@@ -56,7 +58,7 @@ app.post("/updatePost", (req, res) => {
         });
         
     } catch(err) {
-        console.log("/changePost : " + err);
+        console.log("/updatePost : " + err);
     }
 });
 
