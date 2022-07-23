@@ -46,7 +46,7 @@ app.post("/updatePost", (req, res) => {
         res.send(`/changePost.html?id=${req.query.id}`);
         return;
     }
-    if(req.body.title == "" || req.body.message == "") {
+    if(req.body.title == "" || req.body.message == "" || req.body.title.length > 256 || req.body.title.length > 10240 || req.body.title.author > 64) {
         res.send(`/changePost.html?id=${req.query.id}`);
         return;
     }
@@ -81,7 +81,7 @@ app.post("/addPost", (req, res) => {
         res.send("/addPost.html");
         return;
     }
-    if(req.body.title == "" || req.body.message == "") {
+    if(req.body.title == "" || req.body.message == "" || req.body.title.length > 256 || req.body.title.length > 10240 || req.body.title.author > 64) {
         res.send("/addPost.html");
         return;
     }
